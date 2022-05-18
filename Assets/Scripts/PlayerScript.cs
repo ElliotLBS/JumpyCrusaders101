@@ -26,6 +26,7 @@ public class PlayerScript : MonoBehaviour
     public Animator animator;
 
     public static bool hasKey = false;
+    CountingCoins countingcoins;
     #endregion
 
     void Start()
@@ -38,6 +39,7 @@ public class PlayerScript : MonoBehaviour
         boxCollider2D = transform.GetComponent<BoxCollider2D>(); //referens till spelarens boxcollider2D
         sprite = GetComponent<SpriteRenderer>(); //referens till spelarens spriterenderer
         anim = GetComponent<Animator>(); //referens till spelarens animator
+        countingcoins = FindObjectOfType<CountingCoins>();
         #endregion
     }
 
@@ -113,6 +115,12 @@ public class PlayerScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Coin") //om man kolliderar med nyckeln (trigger) s� blir "hasKey" true
+        {
+            countingcoins.Counting += 1;
+            print("Got key!");
+        }
+
         //Gjord av Simon
         #region Key
         if (collision.tag == "Key") //om man kolliderar med nyckeln (trigger) s� blir "hasKey" true
