@@ -9,6 +9,7 @@ TagManager:
   - Key
   - CloudMoving
   - CloudMoving2
+  - Coin
   layers:
   - Default
   - TransparentFX
