@@ -12,7 +12,7 @@ public class Platforms : MonoBehaviour
     void Start()
     { //referenser till components
         effector = GetComponent<PlatformEffector2D>();
-        PlayerScript = PlayerScript.GetComponent<PlayerScript>();
+        PlayerScript = FindObjectOfType<PlayerScript>();
     }
 
     
@@ -24,7 +24,7 @@ public class Platforms : MonoBehaviour
         }
         if (!PlayerScript.startTimer) //om "startTimer" är false, så sätts timern till 3 sekunder
         {
-            waitTime = 3;
+            waitTime = 5000;
         }
         
         if(waitTime <= 0) //om timern är mindre än 0 sekunder (du har stått på plattformen i 3 sekunder), då är platformeffectorn riktad neråt så du faller igenom plattformen
