@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    [SerializeField]
-    float speed;
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
