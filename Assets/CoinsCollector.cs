@@ -13,9 +13,6 @@ public class CoinsCollector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CoinTaker.hasCoin) //om du har nyckeln, så försvinner väggen som blockerar slutet
-        {
-            gameObject.SetActive(false);
-        }
+        
     }
 }

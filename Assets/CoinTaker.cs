@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CoinTaker : MonoBehaviour
 {
-    public static bool hasCoin= false;
+    public int coinAmount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,8 @@ public class CoinTaker : MonoBehaviour
         #region Coin
         if (collision.tag == "Coin") //om man kolliderar med nyckeln (trigger) s� blir "hasKey" true
         {
-            hasCoin = true;
+            coinAmount += 1;
+            Destroy(collision.transform.gameObject);
             print("Got Coin!");
         }
         #endregion
