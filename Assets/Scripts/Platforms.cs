@@ -12,7 +12,7 @@ public class Platforms : MonoBehaviour
     void Start()
     { //referenser till components
         effector = GetComponent<PlatformEffector2D>();
-        PlayerScript = PlayerScript.GetComponent<PlayerScript>();
+        PlayerScript = FindObjectOfType<PlayerScript>();
     }
 
     
