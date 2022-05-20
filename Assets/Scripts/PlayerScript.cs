@@ -92,7 +92,6 @@ public class PlayerScript : MonoBehaviour
         if (isGrounded && Input.GetButtonDown("Jump")) //om man �r p� marken och man trycker p� "Jump" (space) s� hoppar man
         {
             rb.AddForce(transform.up * jumpPower);
-            maneger.Play("Player Jump");
         }
         #endregion
 
