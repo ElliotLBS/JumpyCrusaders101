@@ -61,7 +61,6 @@ public class Jumps : MonoBehaviour
         if (isGrounded && Input.GetButtonDown("Jump")) //om man är på marken och trycker på "Jump" knappen vilket defaultar till spacebar, så hoppar man -Simon
         {
             rb.AddForce(transform.up * jumpPower);
-            FindObjectOfType<AudioManeger>().Play("PlayerJump"); //när man hoppar så spelas hoppljudet upp -Theo
         }
         #endregion
 
