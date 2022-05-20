@@ -113,11 +113,6 @@ public class PlayerScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Coin") //om man kolliderar med nyckeln (trigger) s� blir "hasKey" true
-        {
-            countingcoins.Counting += 1;
-            print("Got key!");
-        }
 
         //Gjord av Simon
         #region Key
