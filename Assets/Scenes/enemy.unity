@@ -902,12 +902,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5051505798511048564, guid: 26440423ff6ea784db836318a8d153d8, type: 3}
       propertyPath: waitTime
-      value: 5000
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051505798511048564, guid: 26440423ff6ea784db836318a8d153d8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5051505798511048564, guid: 26440423ff6ea784db836318a8d153d8, type: 3}
       propertyPath: JumpScript
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5051505798511048564, guid: 26440423ff6ea784db836318a8d153d8, type: 3}
+      propertyPath: PlayerScript
+      value: 
+      objectReference: {fileID: 27959279}
     - target: {fileID: 5051505798511048565, guid: 26440423ff6ea784db836318a8d153d8, type: 3}
       propertyPath: m_Sprite
       value: 
