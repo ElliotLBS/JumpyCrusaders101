@@ -82,14 +82,16 @@ public class PlayerScript : MonoBehaviour
         #region Movement
         float horizontalMove = Input.GetAxis("Horizontal"); //h�mtar h�ger och v�nster input (fungerar med kontroll ocks�)
         rb.velocity = new Vector2(horizontalMove * moveSpeed, rb.velocity.y); //anv�nder h�ger och v�nster inputen f�r att �ndra gubbens velocity
-        
+        anim.SetFloat("AirSpeedY", rb.velocity.y);
         #endregion
-        
+
         //Gjord av Simon
         #region Jump
+        anim.SetBool("Grounded", isGrounded);
         if (isGrounded && Input.GetButtonDown("Jump")) //om man �r p� marken och man trycker p� "Jump" (space) s� hoppar man
         {
             rb.AddForce(transform.up * jumpPower);
+            anim.SetTrigger("Jump");
           
         }
         #endregion
