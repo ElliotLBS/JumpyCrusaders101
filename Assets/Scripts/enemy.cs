@@ -1,31 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField]
     Rigidbody2D rb;
-
-    Player target;
-
+    Transform destination;
+    public Transform target;
     public float speed;
     public GameObject enemy;
     public int health = 9;
+    
 
-
-    public void TakeDamage(int damage)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        health = -damage;
-
-        if (health < 1)
+        print(collision.transform.name);
+        if (collision.transform.tag == "Player")
         {
-            Die();
+            Destroy(collision.gameObject);
         }
-    }
 
-    void Die() 
-    {
-        Destroy(gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+            //collision.transform.position = destination.position;
+            PlayerScript.hasKey = false;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     
 }
+   

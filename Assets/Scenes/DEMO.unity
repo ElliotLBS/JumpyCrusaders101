@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 27959278}
   - component: {fileID: 27959277}
   - component: {fileID: 27959284}
+  - component: {fileID: 27959285}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Player
@@ -465,6 +466,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinAmount: 0
+--- !u!114 &27959285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27959276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6372118894d1d334bbdeba3e92bb7a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  health: 12
+  playerhealth: 0
 --- !u!1 &36623019
 GameObject:
   m_ObjectHideFlags: 0
@@ -4753,8 +4769,8 @@ GameObject:
   - component: {fileID: 1191202534}
   - component: {fileID: 1191202533}
   - component: {fileID: 1191202535}
-  - component: {fileID: 1191202536}
   - component: {fileID: 1191202537}
+  - component: {fileID: 1191202536}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -4883,9 +4899,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1191202532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee4321fe000c9944d8fd1dc859e068c3, type: 3}
+  m_Script: {fileID: 11500000, guid: c34a21074428a064087b9e6c3d822f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  target: {fileID: 0}
+  speed: 0
+  enemy: {fileID: 0}
+  health: 9
 --- !u!1 &1226763275
 GameObject:
   m_ObjectHideFlags: 0
