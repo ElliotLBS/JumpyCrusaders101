@@ -6,10 +6,26 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     Rigidbody2D rb;
-    public int health = 12;
+    public int health;
     float speed = 2;
 
     public int playerhealth;
+
+    public void TakeDamage(int damage)
+    {
+        health = -damage;
+
+        if (health < 1)
+        {
+            Die();
+        }
+    }
+
+     void Die() 
+    {
+        Destroy(gameObject);
+    }
+    
 
     // Start is called before the first frame update
     void Start()
