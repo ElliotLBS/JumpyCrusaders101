@@ -38,6 +38,18 @@ public class Enemy : MonoBehaviour
         newPosition = transform.position + newPosition;
         newPosition.x = Mathf.Clamp(newPosition.x, -101, 126);
         transform.position = newPosition;
+
+        if (Physics2D.Raycast(transform.position - transform.right, Vector3.down) == false)
+        {
+            computerDirection.x = 1;
+        }
+
+        if (Physics2D.Raycast(transform.position + transform.right, Vector3.down) == false)
+        {
+            computerDirection.x = 1;
+        }
+
+
         if (newPosition.x > 126)
         {
             newPosition.x = 126;
