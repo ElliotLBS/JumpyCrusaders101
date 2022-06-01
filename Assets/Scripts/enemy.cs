@@ -7,12 +7,15 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]
     Rigidbody2D rb;
-    Transform destination;
-    public Transform target;
-    public float speed;
+    public int moveSpeed = 1;
     public GameObject enemy;
     public int health = 9;
-    
+    Vector3 computerDirection = Vector3.left;
+    Vector3 moveDirection = Vector3.zero;
+    Vector3 newPosition = Vector3.zero;
+    [SerializeField]
+    Transform destination;
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -24,11 +27,42 @@ public class Enemy : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            //collision.transform.position = destination.position;
             PlayerScript.hasKey = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
-    
+
+    private void Update()
+    {
+        Vector3 newPosition = computerDirection * (moveSpeed * Time.deltaTime);
+        newPosition = transform.position + newPosition;
+        newPosition.x = Mathf.Clamp(newPosition.x, -101, 126);
+        transform.position = newPosition;
+
+        if (Physics2D.Raycast(transform.position - transform.right, Vector3.down) == false)
+        {
+            computerDirection.x = 1;
+        }
+
+        if (Physics2D.Raycast(transform.position + transform.right, Vector3.down) == false)
+        {
+            computerDirection.x = 1;
+        }
+
+
+        if (newPosition.x > 126)
+        {
+            newPosition.x = 126;
+            computerDirection.x *= -1;
+        }
+        else if (newPosition.x < -101)
+        {
+            newPosition.x = -101;
+            computerDirection.x *= -1;
+        }
+
+    }
+
 }
+
    
