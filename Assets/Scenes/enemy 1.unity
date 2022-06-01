@@ -4777,7 +4777,7 @@ GameObject:
   - component: {fileID: 1191202537}
   - component: {fileID: 1191202536}
   m_Layer: 0
-  m_Name: enemy
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4908,7 +4908,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1191202535}
-  target: {fileID: 0}
   moveSpeed: 1
   enemy: {fileID: 1191202532}
   health: 9
