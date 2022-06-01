@@ -2686,7 +2686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waitTime: 0
-  PlayerScript: {fileID: 0}
+  PlayerScript: {fileID: 1313304125}
 --- !u!61 &653291455
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2772,8 +2772,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653291452}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.9, y: 4.44, z: 0}
-  m_LocalScale: {x: 4.9282703, y: 4.5693, z: 1}
+  m_LocalPosition: {x: 5.4, y: 4.6197, z: 0}
+  m_LocalScale: {x: 4.800135, y: 4.2096963, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 36
@@ -6107,6 +6107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34a21074428a064087b9e6c3d822f57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  moveSpeed: 1
+  enemy: {fileID: 1881140555}
+  health: 9
+  destination: {fileID: 0}
 --- !u!50 &1881140558
 Rigidbody2D:
   serializedVersion: 4
